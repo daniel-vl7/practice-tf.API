@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\practice-tf.API.props" />
+</Project>
