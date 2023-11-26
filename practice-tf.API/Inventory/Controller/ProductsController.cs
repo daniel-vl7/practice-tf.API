@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Net.Mime;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using practice_tf.API.Inventory.Domain.Model;
 using practice_tf.API.Inventory.Domain.Services;
@@ -9,6 +10,8 @@ namespace practice_tf.API.Inventory.Controller;
 
 [ApiController]
 [Route("/api/v1/[controller]")]
+[Produces(MediaTypeNames.Application.Json)]
+
 public class ProductsController : ControllerBase
 {
     private readonly IProductService _productService;
