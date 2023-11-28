@@ -25,4 +25,6 @@ public class Product
     public string StatusDescription => Status == 1 ? "OPERATIONAL" : "UNOPERATIONAL";
     
     public MaintenanceActivity MaintenanceActivity { get; set; }
+
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
 }

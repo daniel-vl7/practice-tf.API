@@ -5,16 +5,33 @@ using practice_tf.API.Shared.Extensions;
 
 namespace practice_tf.API.Shared.Persistence.Contexts;
 
+/// <summary>
+///  
+/// </summary>
 public class AppDbContext : DbContext
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public DbSet<Product> Products { get; set; } = null!;
+    /// <summary>
+    /// 
+    /// </summary>
     public DbSet<MaintenanceActivity> MaintenanceActivities { get; set; } = null!;
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="options"></param>
     public AppDbContext(DbContextOptions options) : base(options)
     {
         
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="builder"></param>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -26,6 +43,7 @@ public class AppDbContext : DbContext
         builder.Entity<Product>().Property(p => p.Model).IsRequired();
         builder.Entity<Product>().Property(p => p.SerialNumber).IsRequired();
         builder.Entity<Product>().Property(p => p.Status).IsRequired();
+        builder.Entity<Product>().Property(p => p.CreatedAt).IsRequired();
         builder.Entity<Product>().Ignore(p => p.StatusDescription);
 
         builder.Entity<Product>()
