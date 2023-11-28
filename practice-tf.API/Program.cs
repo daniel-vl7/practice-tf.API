@@ -4,6 +4,10 @@ using practice_tf.API.Inventory.Domain.Services;
 using practice_tf.API.Inventory.Mapping;
 using practice_tf.API.Inventory.Persistence.Repositories;
 using practice_tf.API.Inventory.Services;
+using practice_tf.API.Maintenance.Domain.Repositories;
+using practice_tf.API.Maintenance.Domain.Services;
+using practice_tf.API.Maintenance.Persistence.Repositories;
+using practice_tf.API.Maintenance.Services;
 using practice_tf.API.Shared.Persistence.Contexts;
 using practice_tf.API.Shared.Persistence.Repositories;
 
@@ -32,6 +36,8 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Dependency Injection Configuration
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IMaintenanceActivityRepository, MaintenanceActivityRepository>();
+builder.Services.AddScoped<IMaintenanceActivityService, MaintenanceActivityService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // AutoMapper Configuration

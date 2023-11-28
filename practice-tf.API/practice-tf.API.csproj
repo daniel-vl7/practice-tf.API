@@ -18,15 +18,5 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Maintenance\Controller\" />
-      <Folder Include="Maintenance\Domain\Model\" />
-      <Folder Include="Maintenance\Domain\Repositories\" />
-      <Folder Include="Maintenance\Domain\Services\Communication\" />
-      <Folder Include="Maintenance\Mapping\" />
-      <Folder Include="Maintenance\Persistence\Repositories\" />
-      <Folder Include="Maintenance\Resources\" />
-      <Folder Include="Maintenance\Services\" />
-    </ItemGroup>
 
 </Project>

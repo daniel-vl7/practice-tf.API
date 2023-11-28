@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using practice_tf.API.Maintenance.Domain.Model;
 
 namespace practice_tf.API.Inventory.Domain.Model;
 
@@ -22,4 +23,6 @@ public class Product
 
     [NotMapped]
     public string StatusDescription => Status == 1 ? "OPERATIONAL" : "UNOPERATIONAL";
+    
+    public MaintenanceActivity MaintenanceActivity { get; set; }
 }
