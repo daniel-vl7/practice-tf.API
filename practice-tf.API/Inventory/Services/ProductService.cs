@@ -3,41 +3,63 @@ using practice_tf.API.Inventory.Domain.Repositories;
 using practice_tf.API.Inventory.Domain.Services;
 using practice_tf.API.Inventory.Domain.Services.Communication;
 
-namespace practice_tf.API.Inventory.Services;
-
-public class ProductService : IProductService
+namespace practice_tf.API.Inventory.Services
 {
-    private readonly IProductRepository _productRepository;
-    private readonly IUnitOfWork _unitOfWork;
-
-    public ProductService(IProductRepository productRepository, IUnitOfWork unitOfWork)
+    /// <summary>
+    /// Service class responsible for handling business logic related to products.
+    /// </summary>
+    public class ProductService : IProductService
     {
-        _productRepository = productRepository;
-        _unitOfWork = unitOfWork;
-    }
+        private readonly IProductRepository _productRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-    public async Task<IEnumerable<Product>> ListAsync()
-    {
-        return await _productRepository.ListAsync();
-    }
-
-    public async Task<ProductResponse> SaveAsync(Product product)
-    {
-        var existingProductWithSerialNumber = await _productRepository.FindBySerialNumberAsync(product.SerialNumber!);
-
-        if (existingProductWithSerialNumber!=null){
-            return new ProductResponse("Product with same serial number already exists");
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProductService"/> class.
+        /// </summary>
+        /// <param name="productRepository">The repository for accessing product data.</param>
+        /// <param name="unitOfWork">The unit of work for managing transactions.</param>
+        public ProductService(IProductRepository productRepository, IUnitOfWork unitOfWork)
+        {
+            _productRepository = productRepository;
+            _unitOfWork = unitOfWork;
         }
 
-        try
+        /// <summary>
+        /// Retrieves a list of all products asynchronously.
+        /// </summary>
+        /// <returns>An asynchronous operation that returns the list of products.</returns>
+        public async Task<IEnumerable<Product>> ListAsync()
         {
-            await _productRepository.AddAsync(product);
-            await _unitOfWork.CompleteAsync();
-            return new ProductResponse(product);
+            return await _productRepository.ListAsync();
         }
-        catch (Exception e)
+
+        /// <summary>
+        /// Saves a new product asynchronously and returns a response.
+        /// </summary>
+        /// <param name="product">The product to be saved.</param>
+        /// <returns>An asynchronous operation that returns a <see cref="ProductResponse"/>.</returns>
+        public async Task<ProductResponse> SaveAsync(Product product)
         {
-            return new ProductResponse("An error occurred while saving the product: " + e.Message);
+            // Check if a product with the same serial number already exists.
+            var existingProductWithSerialNumber = await _productRepository.FindBySerialNumberAsync(product.SerialNumber!);
+
+            if (existingProductWithSerialNumber != null)
+            {
+                return new ProductResponse("Product with the same serial number already exists");
+            }
+
+            try
+            {
+                // Add the new product, complete the unit of work, and return a successful response.
+                await _productRepository.AddAsync(product);
+                await _unitOfWork.CompleteAsync();
+                return new ProductResponse(product);
+            }
+            catch (Exception e)
+            {
+                // Return an error response if an exception occurs during the save operation.
+                return new ProductResponse("An error occurred while saving the product: " + e.Message);
+            }
         }
     }
 }

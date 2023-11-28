@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FWcfSJfjnCpne6JYv4H0spFoSqOlM6DGsGeCfJqvbkcZxaQ+iVxglGoMw0gwVFI8jmuYM2LOGFiPqUSmgAofKA==",
+  "dgSpecHash": "wIFGtuFfHUc0eZ65Rztc7V6mAI3Qp2CPw4yaA0dPTL+AjqsXvTkgC69Tnjv87pbJaRwml2sUn38T8cjENDZyBw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo_D\\RiderProjects\\practice-tf.API\\practice-tf.API\\practice-tf.API.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,7 @@
     "C:\\Users\\Lenovo_D\\.nuget\\packages\\netstandard.library\\2.0.0-preview1-25301-01\\netstandard.library.2.0.0-preview1-25301-01.nupkg.sha512",
     "C:\\Users\\Lenovo_D\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\Lenovo_D\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Lenovo_D\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.5.0\\swashbuckle.aspnetcore.annotations.6.5.0.nupkg.sha512",
     "C:\\Users\\Lenovo_D\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\Lenovo_D\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\Lenovo_D\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",

@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using practice_tf.API.Inventory.Domain.Repositories;
 using practice_tf.API.Inventory.Domain.Services;
 using practice_tf.API.Inventory.Mapping;
@@ -18,7 +19,27 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo()
+    {
+        Version = "v1",
+        Title = "ISA API",
+        Description = "ISA RESTful API",
+        TermsOfService = new Uri("https://isa.com/terms"),
+        Contact = new OpenApiContact
+        {
+            Name = "ISA",
+            Url = new Uri("https://isa.com/contact")
+        },
+        License = new OpenApiLicense
+        {
+            Name = "ISA Resources License",
+            Url = new Uri("https://isa.com/license")
+        }
+    });
+    options.EnableAnnotations();
+});
 
 //DB Connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

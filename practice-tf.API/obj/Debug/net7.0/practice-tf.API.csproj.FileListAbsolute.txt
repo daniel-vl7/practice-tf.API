@@ -69,3 +69,5 @@ C:\Users\Lenovo_D\RiderProjects\practice-tf.API\practice-tf.API\obj\Debug\net7.0
 C:\Users\Lenovo_D\RiderProjects\practice-tf.API\practice-tf.API\obj\Debug\net7.0\practice-tf.API.pdb
 C:\Users\Lenovo_D\RiderProjects\practice-tf.API\practice-tf.API\obj\Debug\net7.0\practice-tf.API.genruntimeconfig.cache
 C:\Users\Lenovo_D\RiderProjects\practice-tf.API\practice-tf.API\obj\Debug\net7.0\ref\practice-tf.API.dll
+C:\Users\Lenovo_D\RiderProjects\practice-tf.API\practice-tf.API\bin\Debug\net7.0\practice-tf.API.xml
+C:\Users\Lenovo_D\RiderProjects\practice-tf.API\practice-tf.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll
